@@ -7,6 +7,8 @@ class DemoController < ApplicationController
   def hello
   	# redirect_to("http://www.facebook.com")
   	@array = [1,2,3,4,5]
+    @id = params[:id]
+    @page = params[:page]
   end
 
   def other_hello

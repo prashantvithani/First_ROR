@@ -1,6 +1,8 @@
 <h1>Demo#hello</h1>
 <p>Hey there, </p>
 
+ID: <%= @id%><br />
+Next Page: <%= @page.to_i + 1%><br />
 <%= 1 +1%>
 
 <% target = "world" %>
@@ -11,3 +13,6 @@
 <%end%>
 
 <%= link_to("link to index", :action => 'index')%>
+
+<hr />
+<%= params.inspect%>
