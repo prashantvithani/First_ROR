@@ -1,6 +1,6 @@
 class DemoController < ApplicationController
   def index
-  	render('demo/index')
+    render('demo/index')
   	# redirect_to(:action => 'other_hello')
   end
 
