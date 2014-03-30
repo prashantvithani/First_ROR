@@ -1,5 +1,6 @@
 class Subject < ActiveRecord::Base
-
+	# attr_accessible :name, :position, :visible
+	# accepts_nested_attributes_for :Subject
 	has_many :pages
 
 	scope :visible, -> {where(:visible => true)}

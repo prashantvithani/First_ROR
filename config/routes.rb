@@ -1,7 +1,9 @@
 First::Application.routes.draw do
-  # get "demo/hello"
+  # get "demo/index"
+  # get "subjects/list"
   # get "demo/"
   get ':controller(/:action(/:id(.:format)))'
+  post ':controller(/:action(/:id(.:format)))'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -56,5 +58,5 @@ First::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  # match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))', to: ':controller#:action'
 end
