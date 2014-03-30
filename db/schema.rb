@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140330011701) do
     t.integer "page_id"
   end
 
-  add_index "admin_users_pages", ["admin_user_id", "page_id"], name: "by_admin_user_page", unique: true, using: :btree
+  add_index "admin_users_pages", ["admin_user_id", "page_id"], name: "by_admin_user_page", using: :btree
 
   create_table "pages", force: true do |t|
     t.integer  "subject_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140330011701) do
     t.datetime "updated_at"
   end
 
-  add_index "section_edits", ["admin_user_id", "section_id"], name: "by_admin_user_section", unique: true, using: :btree
+  add_index "section_edits", ["admin_user_id", "section_id"], name: "by_admin_user_section", using: :btree
 
   create_table "sections", force: true do |t|
     t.integer  "page_id"

@@ -5,6 +5,6 @@ class CreateAdminUsersPagesJoin < ActiveRecord::Migration
     	t.integer "page_id"
     	# add_index :admin_user_id, :page_id
     end
-    add_index :admin_users_pages, [:admin_user_id, :page_id], :unique => true, :name => 'by_admin_user_page'
+    add_index :admin_users_pages, [:admin_user_id, :page_id], :name => 'by_admin_user_page'
   end
 end
