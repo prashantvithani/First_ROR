@@ -2,8 +2,7 @@
 class PagesController < ApplicationController 
 
 	def index
-		page_list
-		
+		page_list		
 		render(:action => 'page_list')		
 	end
 
@@ -13,7 +12,6 @@ class PagesController < ApplicationController
 			
 		# end
 		@subject = Subject.find(params[:id])
-
 		@pages = @subject.pages.order("pages.position ASC")
 	end
 
