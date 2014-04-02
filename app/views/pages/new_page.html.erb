@@ -1,0 +1,25 @@
+<%= link_to("<< Back to page list", {:action => 'page_list', :id => @subject.id}, :class => 'back-link')%>
+
+<div class = "page new">
+	<h2>Create Page</h2>
+	
+	<%= form_for(:page, :url => {:action =>'create_page', :id => @subject.id}) do |f|%>	
+	
+	<table summary = "page form fields"> 
+		<tr>
+			<th>Page Name</th>
+			<td><%= f.text_field(:name)%></td>
+		</tr>
+		<tr>
+			<th>Page Position</th>
+			<td><%= f.text_field(:position)%></td>
+		</tr>
+		<tr>
+			<th>Visiblity</th>
+			<td><%= f.text_field(:visible)%></td>
+		</tr>
+
+	</table>
+	<%= submit_tag("create page")%>
+	<%end%>
+</div>

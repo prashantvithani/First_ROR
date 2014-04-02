@@ -4,6 +4,8 @@ First::Application.routes.draw do
   # get "demo/"
   get ':controller(/:action(/:id(.:format)))'
   post ':controller(/:action(/:id(.:format)))'
+  get '/pages', to: "pages#page_list"
+  # post 'pages#create_page', to: "pages"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

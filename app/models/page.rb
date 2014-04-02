@@ -4,4 +4,7 @@ class Page < ActiveRecord::Base
 	has_many :sections
 	has_and_belongs_to_many :editors, :class_name => "AdminUser"
 
+	def to_peram
+		
+	end
 end
