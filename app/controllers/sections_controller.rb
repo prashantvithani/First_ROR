@@ -53,7 +53,7 @@ class SectionsController < ApplicationController
 	 		redirect_to(:id => @subject.id, :page_id => @page.id, :action => 'section_list')
 	 	else
 	 		render(:action => 'edit_section')
-	 	end
+	 	end	 	
 	 end
 
 	 def delete_section
