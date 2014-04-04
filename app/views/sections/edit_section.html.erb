@@ -1,9 +1,9 @@
 <%= link_to("<< Back to Section list", {:action => 'section_list', :id => @subject.id, :page_id => @page.id}, :class => 'back-link')%>
 
-<div class = "Section new">
-	<h2>Create Section</h2>
+<div class = "Section Edit">
+	<h2>Update Section</h2>
 	
-	<%= form_for(:section, :url => {:action =>'create_section', :id => @subject.id, :page_id => @page.id}) do |f|%>	
+	<%= form_for(:section, :url => {:action =>'update_section', :id => @subject.id, :page_id => @page.id, :section_id => @section.id}) do |f|%>	
 	
 	<table summary = "Section form fields"> 
 		<tr>
@@ -27,6 +27,6 @@
 			<td><%= f.text_area(:content)%></td>
 		</tr>
 	</table>
-	<%= submit_tag("create Section")%>
+	<%= submit_tag("update Section")%>
 	<%end%>
 </div>

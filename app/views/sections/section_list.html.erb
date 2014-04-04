@@ -21,9 +21,9 @@
 			<H2><%= section.name %></H2>
 			<!--<td class = "center"><%= section.visible %></td> -->
 			<p class = "center"><%=section.content %></p>
-			<%= link_to("Details", {:page_id => @page.id, :action => 'show_details', :section_id => section.id}, :class => 'action details')%>
-				<%= link_to("Edit", {:action => 'edit_page', :page_id => @page.id, :section_id => section.id}, :class => 'action edit')%>
-				<%= link_to("Delete", {:action=> 'delete_page', :page_id => @page.id, :section_id => section.id}, :class => 'action delete')%>
+			<%= link_to("Details", {:id => @subject.id, :page_id => @page.id, :action => 'section_details', :section_id => section.id}, :class => 'action details')%>
+				<%= link_to("Edit", {:action => 'edit_section', :id => @subject.id, :page_id => @page.id, :section_id => section.id}, :class => 'action edit')%>
+				<%= link_to("Delete", {:action=> 'delete_section', :id => @subject.id, :page_id => @page.id, :section_id => section.id}, :class => 'action delete')%>
 			<hr>
 		<% end %>
 </div>

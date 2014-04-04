@@ -36,4 +36,39 @@ class SectionsController < ApplicationController
 	 		render(:action => 'new_section')
 	 	end
 	 end
+
+	 def edit_section
+	 	@subject = Subject.find(params[:id])
+	 	@page = Page.find(params[:page_id])
+	 	@section = Section.find(params[:section_id])
+	 end
+
+	 def update_section
+	 	@subject = Subject.find(params[:id])
+	 	@page = Page.find(params[:page_id])
+	 	@section  = Section.find(params[:section_id])
+
+	 	if(@section.update_attributes(params[:section].permit(:name, :position, :visible, :content, :content_type)))
+	 		flash[:notice] = "Updated section"
+	 		redirect_to(:id => @subject.id, :page_id => @page.id, :action => 'section_list')
+	 	else
+	 		render(:action => 'edit_section')
+	 	end
+	 end
+
+	 def delete_section
+	 	@subject = Subject.find(params[:id])
+	 	@page = Page.find(params[:page_id])
+	 	@section = Section.find(params[:section_id])
+	 end
+
+	 def destroy_section
+		@subject = Subject.find(params[:id])
+		@page = Page.find(params[:page_id])
+		@section = Section.find(params[:section_id])
+		@page.sections.delete(@section)
+
+		flash[:notice] = "Section Deleted"
+		redirect_to(:id => @subject.id, :page_id => @page.id, :action => 'section_list')
+	end
 end
