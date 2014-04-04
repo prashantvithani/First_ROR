@@ -1,0 +1,29 @@
+<% if !flash[:notice].blank? %>
+	<div class = "notice">
+		<%= flash[:notice] %>
+	</div>
+<%end%>
+<%= link_to("<< Back to Page list", {:id => @subject.id, :page_id => @page.id, :controller => 'pages', :action => 'page_list'}, :class => 'back-link')%>
+<div class = "page list">
+	<h2><%@page.name%></h2>
+	<%= link_to("Add New", {:id => @subject.id, :page_id => @page.id, :action => 'new_section', :class => 'action new_section'})%>
+	<!--<table class = "listing" summary="Page list"> -->
+		<!--<tr class = "header">
+			<th>&nbsp;</th>
+			<th>Subject</th>
+			<th>Visible</th>
+			<th>Sections</th>
+			<th>Actions</th>
+		</tr> -->
+
+		<% @section.each do |section|%>
+			<!--<%= section.position %> -->
+			<H2><%= section.name %></H2>
+			<!--<td class = "center"><%= section.visible %></td> -->
+			<p class = "center"><%=section.content %></p>
+			<%= link_to("Details", {:page_id => @page.id, :action => 'show_details', :section_id => section.id}, :class => 'action details')%>
+				<%= link_to("Edit", {:action => 'edit_page', :page_id => @page.id, :section_id => section.id}, :class => 'action edit')%>
+				<%= link_to("Delete", {:action=> 'delete_page', :page_id => @page.id, :section_id => section.id}, :class => 'action delete')%>
+			<hr>
+		<% end %>
+</div>
